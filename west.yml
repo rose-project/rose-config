@@ -19,6 +19,9 @@ manifest:
       remote: openembedded
       revision: "2.6"
       clone-depth: 1
+    - name: meta-raspberrypi-bsp
+      path: layers/meta-raspberrypi-bsp
+      remote: rose
 
   self:
     path: config
