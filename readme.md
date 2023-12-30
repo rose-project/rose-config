@@ -32,10 +32,10 @@ bitbake sd-image
 
 ## Change Revision
 
-To switch to a different revision of R**OS**E, change to a different revision in the subdirectory `<workspace>`/config` and call `west update` again.
+To switch to a different revision of R**OS**E, change to a different revision in the subdirectory `<workdir>/config` and call `west update` again.
 
 ## License
 
-[MIT](LICENSE)
+[MIT](license)
 
 
