@@ -9,16 +9,19 @@ manifest:
       url-base: https://git.openembedded.org
 
   projects:
-    - name: openembedded-core
-      path: layers/openembedded-core
-      remote: openembedded
-      revision: nanbield
-      clone-depth: 1
     - name: bitbake
       path: tools/bitbake
       remote: openembedded
       revision: "2.6"
       clone-depth: 1
+    - name: openembedded-core
+      path: layers/openembedded-core
+      remote: openembedded
+      revision: nanbield
+      clone-depth: 1
+    - name: meta-rose
+      path: layers/meta-rose
+      remote: rose
     - name: meta-raspberrypi-bsp
       path: layers/meta-raspberrypi-bsp
       remote: rose
