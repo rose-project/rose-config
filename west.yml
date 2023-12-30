@@ -1,0 +1,24 @@
+manifest:
+  defaults:
+    remote: rose
+
+  remotes:
+    - name: rose
+      url-base: https://github.com/rose-project
+    - name: openembedded
+      url-base: https://git.openembedded.org
+
+  projects:
+    - name: openembedded-core
+      path: layers/openembedded-core
+      remote: openembedded
+      revision: nanbield
+      clone-depth: 1
+    - name: bitbake
+      path: tools/bitbake
+      remote: openembedded
+      revision: "2.6"
+      clone-depth: 1
+
+  self:
+    path: config
