@@ -1,0 +1,7 @@
+export ROSE_WORKSPACE=$PWD
+echo "ROSE_WORKSPACE: $ROSE_WORKSPACE"
+
+export TEMPLATECONF=${ROSE_WORKSPACE}/layers/meta-rose/conf/templates/default
+echo "use templates from: $TEMPLATECONF"
+
+export BITBAKEDIR=${ROSE_WORKSPACE}/tools/bitbake

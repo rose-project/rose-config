@@ -24,7 +24,10 @@ west update
 ## Build
 
 ```
-# TODO bitbake build
+cd <workdir>
+. config/build-env
+. layers/openembedded-core/oe-init-build-env
+bitbake sd-image
 ```
 
 ## Change Revision
