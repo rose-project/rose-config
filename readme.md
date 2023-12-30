@@ -1,6 +1,6 @@
-# R**OS**E Config
+# R**OS**E Build Configuration
 
-Sets up a workspace for building the R**OS**E reference distribution.
+Sets up a workspace for building the R**OS**E reference distribution using the 
 
 ## Dependencies
 
@@ -23,5 +23,12 @@ west update
 
 ## Build
 
+```
+# TODO bitbake build
+```
+
+## License
+
+[MIT](LICENSE)
 
 
