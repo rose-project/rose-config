@@ -27,6 +27,10 @@ west update
 # TODO bitbake build
 ```
 
+## Change Revision
+
+To switch to a different revision of R**OS**E, change to a different revision in the subdirectory `<workspace>`/config` and call `west update` again.
+
 ## License
 
 [MIT](LICENSE)
