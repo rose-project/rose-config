@@ -1,30 +1,22 @@
 # build configuration location
-if [ -z "${ROSE_WORKSPACE}" ]; then
-    export ROSE_WORKSPACE=$PWD
+if [ -z "${ROSE_ROOT}" ]; then
+    export ROSE_ROOT=$PWD
 fi
-echo "ROSE_WORKSPACE: $ROSE_WORKSPACE"
+echo "ROSE_ROOT: $ROSE_ROOT"
 
 # determine build dir
-if [ -z "$1" ]; then
-        BUILD_DIR=$1
+if [ ! -z "$1" ]; then
+    BUILD_DIR=$1
 else
-    BUILD_DIR=build
+    BUILD_DIR="build"
 fi
 echo "BUILD_DIR: $BUILD_DIR"
 
-export BITBAKEDIR=${ROSE_BUILDCONFIG_DIR}/tools/bitbake
+export BITBAKEDIR=${ROSE_ROOT}/tools/bitbake
 
 # set up build dir if not yet existing 
 
-export TEMPLATECONF=${ROSE_WORKSPACE}/layers/meta-rose/conf/templates/default
+export TEMPLATECONF=${ROSE_ROOT}/layers/meta-rose/conf/templates/default
 echo "Use configuration templates from: $TEMPLATECONF"
-
-#if [ ! -d "$BUILD_DIR" ]; then
-#    mkdir -p $BUILD_DIR/conf
-#    cp $TEMPLATECONF/bblayers.conf.tmpl  $BUILD_DIR/conf/
-#    cp $TEMPLATECONF/local.conf.tmpl  $BUILD_DIR/conf/
-#fi
-
-#cd $BUILD_DIR
 
 . ${ROSE_WORKSPACE}/layers/openembedded-core/oe-init-build-env $BUILD_DIR
