@@ -15,9 +15,11 @@ The following packages are needed in addition:
 python3-venv
 ```
 
-## Quick Set-Up Guide
+## Users Guide
 
 The following steps show, how a ROSE image can be built for the Raspberry Pi 4.
+
+### Fetching the source
 
 ```
 mkdir rose
@@ -29,7 +31,7 @@ west init -m https://github.com/rose-project/rose-config
 west update
 ```
 
-## Build
+### Build
 
 ```
 cd rose
@@ -38,8 +40,7 @@ cd rose
 bitbake sd-image
 ```
 
-## Change Revision
+### Change Revision
 
-To switch to a different revision of R**OS**E, change to a different revision in the subdirectory `<workdir>/config` and call `west update` again.
-
+The west tool will manage the revision of the sources to fetch using its manifest file in the subdirectory `config`. This subderectory contains the `rose-config` git repository. To change to a different revision of ROSE, you change configuration by fetching a different revision of `rose-config` and then calling west `update again`. 
 
