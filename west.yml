@@ -12,12 +12,12 @@ manifest:
     - name: bitbake
       path: tools/bitbake
       remote: openembedded
-      revision: "2.6"
+      revision: "2.8"
       clone-depth: 1
     - name: openembedded-core
       path: layers/openembedded-core
       remote: openembedded
-      revision: nanbield
+      revision: scarthgap
       clone-depth: 1
     - name: meta-rose
       path: layers/meta-rose
