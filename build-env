@@ -19,4 +19,4 @@ export BITBAKEDIR=${ROSE_ROOT}/tools/bitbake
 export TEMPLATECONF=${ROSE_ROOT}/layers/meta-rose/conf/templates/default
 echo "Use configuration templates from: $TEMPLATECONF"
 
-. ${ROSE_WORKSPACE}/layers/openembedded-core/oe-init-build-env $BUILD_DIR
+. ${ROSE_ROOT}/layers/openembedded-core/oe-init-build-env $BUILD_DIR
