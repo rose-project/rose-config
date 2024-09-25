@@ -25,7 +25,7 @@ The following steps show, how a ROSE image can be built for the Raspberry Pi 4.
 mkdir rose
 cd rose
 python3 -m venv .venv
-. .venv/bin/acivate
+. .venv/bin/activate
 pip install west
 west init -m https://github.com/rose-project/rose-config
 west update
