@@ -6,20 +6,22 @@ Sets up a workspace for building the R**OS**E reference distribution using the [
 
 These scripts and configuration files are distributed unter the [MIT License](license).
 
-## System Requirements
+## User Guide
 
-For general system requirements, please refer to the [Yocto Project documentation](https://docs.yoctoproject.org/ref-manual/system-requirements.html). 
+The following steps show, how a ROSE image can be built for the Raspberry Pi 4.
+
+---
+**Dependencies**
+
+For information on system reququirements and packages to be installed, please refer to the [Yocto Project documentation](https://docs.yoctoproject.org/ref-manual/system-requirements.html).
 
 The following packages are needed in addition:
 ```
 python3-venv
 ```
 
-## Users Guide
-
-The following steps show, how a ROSE image can be built for the Raspberry Pi 4.
-
-### Fetching the source
+---
+**Fetching the source**
 
 ```
 mkdir rose
@@ -31,14 +33,15 @@ west init -m https://github.com/rose-project/rose-config
 west update
 ```
 
-### Build
+---
+**Build**
 
 ```
 cd rose
 . config/build-env
 ```
 
-This sets up the build environment and switches to the build dir. If the build dir does not yet exist, if also initializes build configuration files in build/conf. 
+This sets up the build environment and switches to the build dir. If the build dir does not yet exist, if also initializes build configuration files in build/conf.
 
 
 To run a build simply call:
@@ -48,7 +51,13 @@ bitbake rose-image
 
 After successful built, there should now be an image file `tmp-glibc/deploy/images/raspberrypi4/rose-image-raspberrypi4.rootfs.wic.bz2`.
 
-### Flashing an SD-Card
+**NOTE**
+
+In case you are running Ubuntu 24 or later, you might see an permission error. As a workaround you can run this command with root rights: "echo 0 > /proc/sys/kernel/apparmor_restrict_unprivileged_userns". For details see: https://lists.yoctoproject.org/g/yocto/topic/workaround_for_uid_map_error/106192359
+
+
+---
+**Flashing an SD-Card**
 
 The image can be copied to an SD-Card e.g. using bzcat: 
 
@@ -67,7 +76,8 @@ Login user is root.
 
 A serial console is available through the Rapsberry Pi IO header. 
 
-### Change ROSE Revision
+---
+**Change ROSE Revision**
 
 The west tool will manage the revision of the sources to fetch using its manifest file in the subdirectory `config`. This subderectory contains the `rose-config` git repository. To change to a different revision of ROSE, you change configuration by fetching a different revision of `rose-config` and then calling west `update again`. 
 
