@@ -6,7 +6,7 @@ Sets up a workspace for building the R**OS**E reference distribution using the [
 
 These scripts and configuration files are distributed unter the [MIT License](license).
 
-## User Guide
+## Building an Image
 
 The following steps show, how a ROSE image can be built for the Raspberry Pi 4.
 
@@ -81,3 +81,36 @@ A serial console is available through the Rapsberry Pi IO header.
 
 The west tool will manage the revision of the sources to fetch using its manifest file in the subdirectory `config`. This subderectory contains the `rose-config` git repository. To change to a different revision of ROSE, you change configuration by fetching a different revision of `rose-config` and then calling west `update again`. 
 
+
+## Building the SDK
+
+You can build an SDK package that does includes a toolchain, headers and libraries for cross compiling. To build the SDK, first source the environment and then run the Bitbake task populate_sdk:
+
+```
+bitbake -c populate_sdk rose-image
+```
+
+This will generate a self extracting installer script in the build directory, e.g. `tmp-glibc/deploy/sdk/oecore-rose-image-x86_64-cortexa72-raspberrypi4-toolchain-0.1.sh`
+
+The SDK works independent of Bitbake and can be installed to any location on the system.
+
+```
+./oecore-rose-image-x86_64-cortexa72-raspberrypi4-toolchain-0.1.sh
+ROSE SDK installer version 0.1
+==============================
+Enter target directory for SDK (default: /usr/local/oecore-x86_64): ~/Projects/ROSE/sdk
+You are about to install the SDK to "/home/<USER>/Projects/ROSE/sdk". Proceed [Y/n]? Y
+Extracting SDK...................................................................................................done
+Setting it up...done
+SDK has been successfully set up and is ready to be used.
+Each time you wish to use the SDK in a new shell session, you need to source the environment setup script e.g.
+ $ . /home/<USER>/Projects/ROSE/sdk/environment-setup-cortexa72-oe-linux
+```
+
+After extracting the SDK, an environment script can be sourced to set up the build environment:
+
+```
+. /home/<USER>/Projects/ROSE/sdk/environment-setup-cortexa72-oe-linux
+echo $CC
+aarch64-oe-linux-gcc -mcpu=cortex-a72+crc -mbranch-protection=standard --sysroot=/home/<USER>/Projects/ROSE/sdk/sysroots/cortexa72-oe-linux
+```
