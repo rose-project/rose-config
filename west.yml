@@ -12,17 +12,17 @@ manifest:
     - name: bitbake
       path: tools/bitbake
       remote: openembedded
-      revision: "1c9ec1ffde75809de34c10d3ec2b40d84d258cb4" # 2.8.1
+      revision: "10118785e4a670bce4980e1044c0888a8b6e84af" # 2.8
       clone-depth: 1
     - name: openembedded-core
       path: layers/openembedded-core
       remote: openembedded
-      revision: "2696c50af9946f425ccaf7d0e7e0eb3fd87c36bb" # scarthgap
+      revision: "a1f4ae4e569bc0e36c27c1e4651e502e54d63b28" # scarthgap
       clone-depth: 1
     - name: meta-openembedded
       path: layers/meta-openembedded
       remote: openembedded
-      revision: "e621da947048842109db1b4fd3917a02e0501aa2" # scarthgap
+      revision: "ec0469748be4159fb83fb0fa0148d786484c88cf" # scarthgap
       clone-depth: 1
     - name: meta-rose
       path: layers/meta-rose
