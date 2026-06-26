@@ -12,24 +12,26 @@ manifest:
     - name: bitbake
       path: tools/bitbake
       remote: openembedded
-      revision: "10118785e4a670bce4980e1044c0888a8b6e84af" # 2.8
+      revision: "acfe02fa38b5da9e6a36c6cedcf91d4fcbefbfbd" # 2.18
       clone-depth: 1
     - name: openembedded-core
       path: layers/openembedded-core
       remote: openembedded
-      revision: "a1f4ae4e569bc0e36c27c1e4651e502e54d63b28" # scarthgap
+      revision: "5d1aa5c806c061a2994f4decb59016610f093213" # wrynose
       clone-depth: 1
     - name: meta-openembedded
       path: layers/meta-openembedded
       remote: openembedded
-      revision: "ec0469748be4159fb83fb0fa0148d786484c88cf" # scarthgap
+      revision: "100027977216601000cbefc42c2ff6cf667e7b5e" # wrynose
       clone-depth: 1
     - name: meta-rose
       path: layers/meta-rose
       remote: rose
+      revision: yocto-6.0
     - name: meta-raspberrypi-bsp
       path: layers/meta-raspberrypi-bsp
       remote: rose
+      revision: yocto-6.0
 
   self:
     path: config

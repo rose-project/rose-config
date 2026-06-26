@@ -66,7 +66,7 @@ WARNING: Make sure to use the right block device e.g. with `lsblk`. You will ove
 ```
 sudo -s
 bzcat tmp-glibc/deploy/images/raspberrypi4/rose-image-raspberrypi4.rootfs.wic.bz2 > /dev/sdX
-sync
+blockdev --flushbufs /dev/sdX
 exit
 ```
 
