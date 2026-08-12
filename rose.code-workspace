@@ -1,0 +1,58 @@
+{
+	"folders": [
+		{
+			"name": "rose",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"build/cache": true,
+			"build/downloads": true,
+			"build/sstate-cache": true,
+			"build/tmp": true
+		},
+		"search.exclude": {
+			"build/cache": true,
+			"build/downloads": true,
+			"build/sstate-cache": true,
+			"build/tmp": true,
+			"**/.venv": true,
+			"**/.west": true
+		},
+		"files.watcherExclude": {
+			"**/build/cache/**": true,
+			"**/build/downloads/**": true,
+			"**/build/sstate-cache/**": true,
+			"**/build/tmp/**": true,
+			"**/.venv/**": true,
+			"**/.west/**": true
+		},
+		"search.followSymlinks": false,
+		"files.followSymlinks": false,
+		"python.analysis.exclude": [
+			"**/build/**",
+			"**/.west/**",
+			"**/.venv/**"
+		],
+		"python.analysis.ignore": [
+			"**/build/**"
+		],
+		"C_Cpp.files.exclude": {
+			"**/build/**": true,
+			"**/.venv/**": true
+		},
+		"C_Cpp.exclusionPolicy": "checkFilesAndFolders",
+		"C_Cpp.autoAddFileAssociations": false,
+		"cmake.configureOnOpen": false,
+		"cmake.enableAutomaticKitScan": false,
+		"cmake.ignoreCMakeListsMissing": true,
+		"git.repositoryScanIgnoredFolders": [
+			"node_modules",
+			"build",
+			".venv",
+			".west"
+		],
+		"git.repositoryScanMaxDepth": 2
+	}
+}
