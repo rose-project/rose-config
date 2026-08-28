@@ -12,17 +12,17 @@ manifest:
     - name: bitbake
       path: tools/bitbake
       remote: openembedded
-      revision: "0ad6c1c34a5e07a5f8dd66ab248c1e7b37b69fa9" # 2.18
+      revision: "acfe02fa38b5da9e6a36c6cedcf91d4fcbefbfbd" # yocto-6.0.2 (2.18.0)
       clone-depth: 1
     - name: openembedded-core
       path: layers/openembedded-core
       remote: openembedded
-      revision: "f7397af248e1e338929d70a910b0fbc2341528ec" # wrynose
+      revision: "5d1aa5c806c061a2994f4decb59016610f093213" # yocto-6.0.2 (wrynose)
       clone-depth: 1
     - name: meta-openembedded
       path: layers/meta-openembedded
       remote: openembedded
-      revision: "14282a02be9c74a1276a7cda7d6c89e054699a11" # wrynose
+      revision: "14282a02be9c74a1276a7cda7d6c89e054699a11" # wrynose branch tip 2026-07-31 (no release tags in meta-oe)
       clone-depth: 1
     - name: meta-rose
       path: layers/meta-rose
